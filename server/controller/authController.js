@@ -21,7 +21,7 @@ const authController = {
         
         // if error in validation -> return error via middleware
         if(error){
-            console.log(error)
+            // console.log(error)
             return next(error)
         }
         

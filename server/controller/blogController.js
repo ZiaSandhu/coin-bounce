@@ -27,7 +27,7 @@ const blogController = {
 
         const {title,author,content,photo} = req.body
         // handle photo 
-        const buffer = Buffer.from(photo.replace(/^data:image\/(png|jpg|jpeg):base64,/,""),'base64')
+        const buffer = Buffer.from(photo.replace(/^data:image\/(png|jpg|jpeg);base64,/,""),'base64');
         const imagePath = `storage/${Date.now()}-${author}.png`
         // storing locally
         try {
@@ -82,7 +82,7 @@ const blogController = {
         } catch (error) {
             return next(error)
         }
-        res.status(200).json({blog: new BlogAuthorDto(blog)})
+        res.status(200).json({data: new BlogAuthorDto(blog)})
 
     },
     async update(req,res,next){

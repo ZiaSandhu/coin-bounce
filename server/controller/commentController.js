@@ -1,7 +1,6 @@
 const Joi = require('joi');
 const Comment = require('../models/comment');
 const CommentDto = require('../DTO/comment');
-const comment = require('../models/comment');
 
 const IdPattern = /^[a-fA-F0-9]{24}$/
 
@@ -29,7 +28,7 @@ const commentController = {
             console.log(error)
             return next(error)
         }
-        res.status(200).json({comment,msg:"Comment created"})
+        res.status(201).json({comment,msg:"Comment created"})
     },
     async getById(req,res,next){
         const getCommentSchema = Joi.object({
@@ -54,7 +53,7 @@ const commentController = {
             return next(error)
         }
 
-        res.status(200).json({comments:commentdto})
+        res.status(200).json({data:commentdto})
     }
 }
 
