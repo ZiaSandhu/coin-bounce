@@ -74,12 +74,12 @@ const authController = {
         // send token to cookies
         res.cookie('accessToken', accesToken, {
             maxAge: 1000*60*60*24,
-            httponly: true
+            httpOnly: true
         });
         
         res.cookie('refreshToken', refreshToken, {
             maxAge: 1000*60*60*24,
-            httponly: true
+            httpOnly: true
         });
 
 

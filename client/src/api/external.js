@@ -11,6 +11,8 @@ export const getNews = async () =>{
     try {
         response = await axios.get(NEWS_API_ENDPOINT)
         response = response.data.articles.slice(0,15)
+        console.log("🚀 ~ file: external.js:14 ~ getNews ~ response:", response)
+        
     } catch (error) {
         return error
     }
